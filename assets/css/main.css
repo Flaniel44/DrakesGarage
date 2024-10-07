@@ -7,6 +7,20 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+.main-icon {
+	display: inline-block;
+	width: 200px;	
+	height: auto;
+	padding-top: 5px;
+	
+}
+
+@media (max-width: 768px) {
+    .main-icon {
+        width: 120px; /* Smaller size on mobile */
+    }
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -2792,7 +2806,10 @@ input, select, textarea {
 				display: block;
 				height: 100%;
 				left: 0;
-				opacity: 0.85;
+				
+				/* this changes the background opacity of each tile */
+				opacity: 0.75; 
+
 				position: absolute;
 				width: 100%;
 				z-index: 2;
@@ -2829,9 +2846,9 @@ input, select, textarea {
 			.tiles article:nth-child(4n - 1), .tiles article:nth-child(4n - 2) {
 				width: 60%;
 			}
-
+			/* TILE COLOURS */
 			.tiles article:nth-child(6n - 5):before {
-				background-color: #6fc3df;
+				background-color: #969797;
 			}
 
 			.tiles article:nth-child(6n - 4):before {
@@ -2839,7 +2856,7 @@ input, select, textarea {
 			}
 
 			.tiles article:nth-child(6n - 3):before {
-				background-color: #ec8d81;
+				background-color: #6e047a;
 			}
 
 			.tiles article:nth-child(6n - 2):before {
