@@ -36,9 +36,8 @@
 							<li><a href="elements.html">Tints</a></li>
 							<li><a href="elements.html">Detailing</a></li>
 							<li><a href="elements.html">Clothing</a></li>
-							<li><a href="elements.html">FaQ</a></li>
 							<li><a href="elements.html">About</a></li>
-							<li><a href="elements.html"></a></li>
+							<li><a href="elements.html">FaQ</a></li>
 						</ul>
 						<ul class="actions stacked">
 						</ul>
@@ -120,19 +119,19 @@
 								</article>
 								<article>
 									<span class="image">
-										<!-- <img src="images/ccoating.jpg" alt="" /> -->
+										<img src="images/SLogo.png" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="landing.html" class="link">FaQ</a></h3>
+										<h3><a href="landing.html" class="link">About</a></h3>
 										<p></p>
 									</header>
 								</article>
 								<article>
 									<span class="image">
-										<img src="images/SLogo.png" alt="" />
+										<!-- <img src="images/ccoating.jpg" alt="" /> -->
 									</span>
 									<header class="major">
-										<h3><a href="landing.html" class="link">About</a></h3>
+										<h3><a href="landing.html" class="link">FaQ</a></h3>
 										<p></p>
 									</header>
 								</article>
@@ -202,6 +201,54 @@
 							</section>
 						</div>
 					</section>
+
+
+					<section id="two">
+						<div class="inner">		
+						<div class="content">
+							<p>But don't take our word for it!</p>
+						</div>
+						<div id="google-reviews" class="reviews-container"></div>
+
+
+						<script>
+							function initMap() {
+								const placeId = 'ChIJmWn57SdG1aARyuzjABCcXSM';
+								const request = {
+									placeId: placeId,
+									fields: ['name', 'rating', 'reviews']
+								};
+						
+								const service = new google.maps.places.PlacesService(document.createElement('div'));
+								service.getDetails(request, (place, status) => {
+									if (status === google.maps.places.PlacesServiceStatus.OK) {
+										let reviewsContainer = document.getElementById('google-reviews');
+										place.reviews.forEach(review => {
+											const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+											const reviewHTML = `
+												<div class="review">
+													<h3>${review.author_name}</h3>
+													<p class="rating">${stars}</p>
+													<p>${review.text}</p>
+												</div>
+											`;
+											reviewsContainer.innerHTML += reviewHTML;
+										});
+									}
+								});
+							}
+						</script>
+						
+						<script async defer
+						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAG_kT29OfUpENPeags1-66YLyw3SMZBU&libraries=places&callback=initMap">
+						</script>
+						
+					</div>
+
+					</section>
+
+					
+					
 
 				<!-- Footer -->
 					<footer id="footer">
